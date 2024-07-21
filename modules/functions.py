@@ -1,7 +1,6 @@
 from libqtile.lazy import lazy
 from libqtile import hook, qtile
 from libqtile.config import Group
-from modules.keys import keys
 
 
 @lazy.layout.function
