@@ -279,6 +279,7 @@ def init_widgets_list():
             background=colors[4],  # Fondo en color cuaternario
             fmt='⌨  Kbd: {}',
             padding=6,
+            configured_keyboards=['us', 'latam'],
             decorations=[
                 PowerLineDecoration(path="arrow_right", colour=colors[4])
             ]
