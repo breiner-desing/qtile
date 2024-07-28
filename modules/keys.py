@@ -1,6 +1,6 @@
 from libqtile.config import Key, KeyChord
 from libqtile.lazy import lazy
-from .functions import add_treetab_section, minimize_all, maximize_by_switching_layout, create_and_switch_group, move_window_to_group, go_to_prev_group, go_to_next_group
+from .functions import add_treetab_section, minimize_all, maximize_by_switching_layout, create_and_switch_group, move_window_to_group
 
 mod = "mod4"              # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"      # My terminal of choice

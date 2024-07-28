@@ -52,4 +52,4 @@ def move_window_to_group(group_name):
         if window is not None:
             # Mover la ventana al grupo especificado
             window.togroup(group_name)
-   return f
+    return f
