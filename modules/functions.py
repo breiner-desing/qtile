@@ -41,11 +41,15 @@ def add_group_on_switch():
     if current_group not in qtile.groups_map:
         create_group(current_group)
 
-
-
-
-
-
-
-
-
+def move_window_to_group(group_name):
+    def f(qtile):
+        # Verificar si el grupo existe, si no, crearlo
+        if group_name not in qtile.groups_map:
+            qtile.add_group(group_name)
+        
+        # Obtener la ventana activa
+        window = qtile.current_window
+        if window is not None:
+            # Mover la ventana al grupo especificado
+            window.togroup(group_name)
+   return f

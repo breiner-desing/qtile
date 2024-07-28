@@ -1,6 +1,6 @@
 from libqtile.config import Key, KeyChord
 from libqtile.lazy import lazy
-from .functions import add_treetab_section, minimize_all, maximize_by_switching_layout, create_and_switch_group
+from .functions import add_treetab_section, minimize_all, maximize_by_switching_layout, create_and_switch_group, move_window_to_group, go_to_prev_group, go_to_next_group
 
 mod = "mod4"              # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"      # My terminal of choice
@@ -112,17 +112,16 @@ keys = [
     Key([mod], "9", create_and_switch_group("9"), desc="Switch to group 9"),
 
     # Move window to specific group
-    Key([mod, "shift"], "1", lazy.window.togroup("1", switch_group=True), desc="Move focused window to group 1"),
-    Key([mod, "shift"], "2", lazy.window.togroup("2", switch_group=True), desc="Move focused window to group 2"),
-    Key([mod, "shift"], "3", lazy.window.togroup("3", switch_group=True), desc="Move focused window to group 3"),
-    Key([mod, "shift"], "4", lazy.window.togroup("4", switch_group=True), desc="Move focused window to group 4"),
-    Key([mod, "shift"], "5", lazy.window.togroup("5", switch_group=True), desc="Move focused window to group 5"),
-    Key([mod, "shift"], "6", lazy.window.togroup("6", switch_group=True), desc="Move focused window to group 6"),
-    Key([mod, "shift"], "7", lazy.window.togroup("7", switch_group=True), desc="Move focused window to group 7"),
-    Key([mod, "shift"], "8", lazy.window.togroup("8", switch_group=True), desc="Move focused window to group 8"),
-    Key([mod, "shift"], "9", lazy.window.togroup("9", switch_group=True), desc="Move focused window to group 9"),
+    Key([mod, "shift"], "1", lazy.function(move_window_to_group("1")), desc="Move focused window to group 1"),
+    Key([mod, "shift"], "2", lazy.function(move_window_to_group("2")), desc="Move focused window to group 2"),
+    Key([mod, "shift"], "3", lazy.function(move_window_to_group("3")), desc="Move focused window to group 3"),
+    Key([mod, "shift"], "4", lazy.function(move_window_to_group("4")), desc="Move focused window to group 4"),
+    Key([mod, "shift"], "5", lazy.function(move_window_to_group("5")), desc="Move focused window to group 5"),
+    Key([mod, "shift"], "6", lazy.function(move_window_to_group("6")), desc="Move focused window to group 6"),
+    Key([mod, "shift"], "7", lazy.function(move_window_to_group("7")), desc="Move focused window to group 7"),
+    Key([mod, "shift"], "8", lazy.function(move_window_to_group("8")), desc="Move focused window to group 8"),
+    Key([mod, "shift"], "9", lazy.function(move_window_to_group("9")), desc="Move focused window to group 9"),
 
-    
     # Emacs programs launched using the key chord CTRL+e followed by 'key'
     KeyChord([mod],"e", [
         Key([], "e", lazy.spawn(myEmacs), desc='Emacs Dashboard'),

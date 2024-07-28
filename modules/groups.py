@@ -10,7 +10,7 @@ from libqtile import qtile
 
 group_names = ["1", "2", "3"]
 group_labels = ["1", "2", "3"]
-group_layouts = ["monadtall", "monadtall", "tile"]
+group_layouts = ["monadtall", "monadtall", "monadtall"]
 
 groups = [Group(name=group_names[i], layout=group_layouts[i].lower(), label=group_labels[i]) for i in range(len(group_names))]
 
